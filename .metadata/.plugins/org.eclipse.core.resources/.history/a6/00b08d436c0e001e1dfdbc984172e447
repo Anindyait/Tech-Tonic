@@ -1,0 +1,216 @@
+package pkg;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+/**
+ * Servlet implementation class EditArticle
+ */
+@WebServlet("/EditArticle")
+@MultipartConfig(
+		  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+		  maxFileSize = 1024 * 1024 * 10,      // 10 MB
+		  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+		)
+public class EditArticle extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EditArticle() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		ServletContext context=getServletContext(); 
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+
+		
+		//getting values from input fields
+		String article_id = request.getParameter("article_id");
+		
+		String user_id = Utilities.GetUID(request);
+		
+		
+		
+		
+		try {
+    		
+    		Connection con;
+    		PreparedStatement pstm;
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			
+			//Query by id
+			pstm = con.prepareStatement("select article_id, title, body, post_date, tags, image_path, poster from article where article_id = ?;");
+    		
+			pstm.setString(1, article_id);
+			
+			ResultSet rs = pstm.executeQuery();
+			
+			
+			
+			if(rs.next())
+			{
+				String title = rs.getString("title");
+				String body = rs.getString("body");
+				String tags = rs.getString("tags");
+				String post_date = rs.getString("post_date");
+				String image_path = rs.getString("image_path");
+				String poster_id = rs.getString("poster");
+				
+				
+				System.out.println("req"+user_id+"DB"+poster_id);
+				
+				if(!poster_id.equals(user_id))
+				{
+					pw.println("Not your article");
+					return;
+				}
+				
+				//Date and time formatting
+			    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			    Date date = formatter.parse(post_date);
+			    DateFormat formatter2 = new SimpleDateFormat("HH:mm E, dd MMM yyyy");
+			    post_date = formatter2.format(date);
+				
+			
+				tags = tags.replaceAll(",,","#");
+				tags = "#" + tags.substring(1, tags.length()-1);
+			    
+			   				
+				request.setAttribute("edit_title", title);
+				request.setAttribute("edit_image_path", image_path);
+				request.setAttribute("edit_body", body);
+				request.setAttribute("edit_tags", tags);
+				request.setAttribute("article_id", article_id);
+
+
+				request.getRequestDispatcher("editArticle2.jsp").include(request, response);
+
+			     
+			}
+		}
+			
+			
+		catch(Exception e) {System.out.println(e);}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		
+		
+		String title = request.getParameter("title");
+		String article = request.getParameter("article");
+
+		String tags = request.getParameter("tags");
+		String user_id = Utilities.GetUID(request);
+		
+		String article_id = request.getParameter("article_id");
+		Part filePart = request.getPart("file");
+		
+		String fileName = filePart.getSubmittedFileName();
+		
+		
+
+
+		//System.out.println(article_id);
+		System.out.println(title + article+ article_id+"\nFilename =("+fileName+")");
+		
+		
+		
+		//seperating tags by comas
+	    String formatted_tags="";
+	    tags = tags.replaceAll("\\s", "").toLowerCase();
+		String[] tokens=tags.split("#");  
+	    for(int i=1;i<tokens.length;i++)
+			formatted_tags = formatted_tags + "," + tokens[i] + ","; 
+		
+		
+	    try 
+		{
+			Connection con;
+			PreparedStatement pstm; 			       //class to prepare statement
+			
+			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+														//jdbc:mysql then ip address then port no. then db name
+													
+
+			Statement stmt = con.createStatement();
+			
+			
+			pstm = con.prepareStatement("select poster, image_path from article where article_id = ?;");
+			pstm.setString(1, article_id);
+			ResultSet rs_id = pstm.executeQuery();
+			
+			if(rs_id.next() && rs_id.getString("poster").equals(user_id))
+			{
+				pstm  = con.prepareStatement("update article "
+						+ "set title=?, body=?, tags=? "
+						+ " where article_id=? and poster=?");
+				pstm.setString(1, title); 					
+				pstm.setString(2, article); 
+				pstm.setString(3, formatted_tags); 
+				pstm.setString(4, article_id);
+				pstm.setString(5, user_id);
+
+				pstm.executeUpdate();
+				
+				if(!fileName.equals(""))
+				{
+					filePart.write(rs_id.getString("image_path"));
+				}
+				
+		    	request.getRequestDispatcher("postArticle.html").include(request, response);
+
+
+			}
+			
+			
+		}catch(Exception e) {System.out.println(e);}
+		
+
+
+	}
+	
+	
+	private String generateUniqueFileName(String originalFileName) {
+        String extension = originalFileName.substring(originalFileName.lastIndexOf("."));
+        String uniqueID = UUID.randomUUID().toString();
+        return uniqueID + extension;
+    }
+
+}

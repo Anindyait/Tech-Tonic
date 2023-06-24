@@ -1,0 +1,130 @@
+package pkg;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class EditArticle
+ */
+@WebServlet("/EditArticle")
+public class EditArticle extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EditArticle() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		ServletContext context=getServletContext(); 
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+
+		
+		//getting values from input fields
+		String article_id = request.getParameter("article_id");
+		
+		String user_id = Utilities.GetUID(request);
+		
+		
+		try {
+    		
+    		Connection con;
+    		PreparedStatement pstm;
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			
+			//Query by id
+			pstm = con.prepareStatement("select article_id, title, body, post_date, tags, image_path, poster from article where article_id = ?;");
+    		
+			pstm.setString(1, article_id);
+			
+			ResultSet rs = pstm.executeQuery();
+			
+			
+			
+			if(rs.next())
+			{
+				String title = rs.getString("title");
+				String body = rs.getString("body");
+				String tags = rs.getString("tags");
+				String post_date = rs.getString("post_date");
+				String image_path = rs.getString("image_path");
+				String poster_id = rs.getString("poster");
+				
+				
+				System.out.println("req"+user_id+"DB"+poster_id);
+				
+				if(!poster_id.equals(user_id))
+				{
+					pw.println("Not your article");
+					return;
+				}
+				
+				//Date and time formatting
+			    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			    Date date = formatter.parse(post_date);
+			    DateFormat formatter2 = new SimpleDateFormat("HH:mm E, dd MMM yyyy");
+			    post_date = formatter2.format(date);
+				
+			
+				tags = tags.replaceAll(",,","#");
+				tags = "#" + tags.substring(1, tags.length()-1);
+			    
+			   				
+				request.setAttribute("edit_title", title);
+				request.setAttribute("edit_image_path", image_path);
+				request.setAttribute("edit_body", body);
+				request.setAttribute("edit_tags", tags);
+
+				request.getRequestDispatcher("editArticle.jsp").include(request, response);
+
+			     
+
+			}
+		}
+			
+			
+		catch(Exception e) {System.out.println(e);}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		ServletContext context=getServletContext(); 
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+		String article_id = request.getParameter("article_id");
+
+		System.out.println(article_id);
+	}
+
+}

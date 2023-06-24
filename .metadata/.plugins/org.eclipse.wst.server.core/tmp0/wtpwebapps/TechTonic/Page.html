@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="imgs/tech.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechTonic</title>
+    <script src="https://kit.fontawesome.com/13deb536c6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body onload="checkMode()">
+    <div class="font">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <nav class="navbar fixed-top navbar-expand-lg nav-tweak" style="color:var(--text-color)!important;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="imgs/tech.png" alt="Logo" width="40" height="40" class="d-inline-block">
+
+            <span>TechTonic</span>
+        </a>
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span role="button" ><i class="fa fa-bars" aria-hidden="true" style="opacity:70%"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown" style="align:right">
+          <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="/AboutUs">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Text">Text</a>
+            </li>
+
+            <li class="nav-item">
+                <div class="mode-container">
+                    <input type="checkbox" id="mode" onclick="changeMode(this)">
+                    <label for="mode" id="modeIcon">
+                        <i class="fa-solid fa-moon fa-lg"></i>
+                    </label>
+                </div>
+            </li>
+
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="header-spacing"></div>
+    <div class="top-bg">
+        <h1>Top News</h1>
+        
+        <br>
+        <a href="#" class="no-decoration">
+        <div class="top-news">
+            <div class="row" style="margin:auto">
+                <div class="col-md-4" >
+                    <img src="imgs/img.jpg" class="img-fluid top-img" style="margin:auto">
+                </div>
+                    <div class="col-md" >
+                        <h2 class="top-news-title d-flex align-items-center">Design is popping up as an important need for consumers: Nothing India head on Phone focus</h2>
+                        <p class="top-news-poster">Anindya Biswas</p>
+
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+
+    <div class="row" style="width:100%;margin:0 auto">
+        <div class="col-md" >
+            <div class="news-container">
+                <a href="#" class="no-decoration">
+                <div class="news-category">#Phone <i class="fa-solid fa-chevron-right fa-xs"></i></div>
+                </a>
+                <ul>
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto;">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/article_images/gsmarena_001.jpg" class="img-fluid news-img">
+                            </div>
+                        </div>
+                            <div class="col" >
+                                <div class="news-title" max-length="10">Design is popping up as an important need for consumers: Nothing India head on Phone focus adasdasdhi dasdhaishdiasd asdihaidyaiodaoidaod</div>
+                                <p>Anindya Biswas</p>
+                            </div>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                <div class="news">
+                    
+                    <div class="row" style="margin:auto">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col" style="width:100%">
+                                <div class="news-title">This is the title for the top news fsfsdff sfsdfsdfsd fsdf s d f s d f s dfs fdfgfgdfg dfg dffgd fg gdfg dfg dfg dfg dfg dfgdfgergtrhfg ggdfg</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+           
+
+            </ul>
+            
+            
+        </div>
+        </div>
+        <div class="col-md" >
+            <div class="news-container">
+                <a href="#" class="no-decoration">
+                <div class="news-category">#PC <i class="fa-solid fa-chevron-right fa-xs"></i></div>
+                </a>
+            <ul>
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto;">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" class="img-fluid ">
+                            </div>
+                        </div>
+                            <div class="col" >
+                                <div class="news-title" max-length="10">Design is popping up as an important need for consumers: Nothing India head on Phone focus adasdasdhi dasdhaishdiasd asdihaidyaiodaoidaod</div>
+                                <p>Anindya Biswas</p>
+                            </div>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                <div class="news">
+                    
+                    <div class="row" style="margin:auto">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col" style="width:100%">
+                                <div class="news-title">This is the title for the top news fsfsdff sfsdfsdfsd fsdf s d f s d f s dfs fdfgfgdfg dfg dffgd fg gdfg dfg dfg dfg dfg dfgdfgergtrhfg ggdfg</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            
+
+            </ul>
+            
+            
+            </div>
+
+        
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md" >
+            <div class="news-container">
+                <a href="#" class="no-decoration">
+                <div class="news-category">#Gaming <i class="fa-solid fa-chevron-right fa-xs"></i></div>
+                </a>
+            <ul>
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto;">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" class="img-fluid ">
+                            </div>
+                        </div>
+                            <div class="col" >
+                                <div class="news-title" max-length="10">Design is popping up as an important need for consumers: Nothing India head on Phone focus adasdasdhi dasdhaishdiasd asdihaidyaiodaoidaod</div>
+                                <p>Anindya Biswas</p>
+                            </div>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                <div class="news">
+                    
+                    <div class="row" style="margin:auto">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col" style="width:100%">
+                                <div class="news-title">This is the title for the top news fsfsdff sfsdfsdfsd fsdf s d f s d f s dfs fdfgfgdfg dfg dffgd fg gdfg dfg dfg dfg dfg dfgdfgergtrhfg ggdfg</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            
+
+            </ul>
+            
+            
+            </div>
+
+        
+        </div>
+
+        <div class="col-md" >
+            <div class="news-container">
+                <a href="#" class="no-decoration">
+                <div class="news-category">#Others <i class="fa-solid fa-chevron-right fa-xs"></i></div>
+                </a>
+            <ul>
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto;">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" class="img-fluid ">
+                            </div>
+                        </div>
+                            <div class="col" >
+                                <div class="news-title" max-length="10">Design is popping up as an important need for consumers: Nothing India head on Phone focus adasdasdhi dasdhaishdiasd asdihaidyaiodaoidaod</div>
+                                <p>Anindya Biswas</p>
+                            </div>
+                    </div>
+                </div>
+                </li>
+
+                <li>
+                <div class="news">
+                    
+                    <div class="row" style="margin:auto">
+                        <div class="col-5" >
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col" style="width:100%">
+                                <div class="news-title">This is the title for the top news fsfsdff sfsdfsdfsd fsdf s d f s d f s dfs fdfgfgdfg dfg dffgd fg gdfg dfg dfg dfg dfg dfgdfgergtrhfg ggdfg</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+        
+                <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="news">
+                    <div class="row" style="margin:auto">
+                        <div class="col-5">
+                            <div class="news-image-container">
+                            <img src="imgs/img.jpg" height="100%" class="img-fluid">
+                            </div>
+                        </div>
+                            <div class="col">
+                                <div class="news-title">This is the title for the top news</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            
+
+            </ul>
+            
+            
+            </div>
+
+        
+        </div>
+    </div>
+  
+
+    </div>
+
+    <script>
+        var root = document.querySelector(':root');
+        var label = document.getElementById("modeIcon");
+
+
+        function mode(status)
+        {
+            if (status=="dark")
+            {
+                const d = new Date();
+                var exdays = 30;
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires=" + d.toUTCString();
+
+                root.style.setProperty('--bg-color', '#000000d9');
+                root.style.setProperty('--text-color', 'white');
+                root.style.setProperty('--shadow-color', 'rgba(255, 255, 255, 0.455)');
+                document.cookie = "Mode=dark;" + expires + ";path=/";
+                label.innerHTML = '<i class="fa-solid fa-sun fa-lg"></i>';
+            }
+
+            else{
+                root.style.setProperty('--shadow-color', 'rgba(0, 0, 0, 0.455)');
+                document.cookie = "Mode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                root.style.setProperty('--bg-color', '#ffffff');
+                root.style.setProperty('--text-color', 'black');
+                label.innerHTML = '<i class="fa-solid fa-moon fa-lg"></i>';
+            }
+        }
+
+        function changeMode(checkbox)
+        {
+
+            if(checkbox.checked == true) {
+                mode("dark");
+            }
+            else
+            {
+                mode("light");
+            }
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+              let c = ca[i];
+              while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+              }
+              if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+              }
+            }
+            return "";
+          }
+
+        function checkMode()
+        {
+            var status = getCookie("Mode");
+            if (status == "dark") {
+                mode("dark");
+
+            } 
+        }
+
+        $(document).ready(function(){
+  
+            $('.news-title').each(function (f) {
+          
+                var newstr = $(this).text().substring(0,50);
+                $(this).text(newstr);
+          
+              });
+          })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+	</script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script>
+		$(function () {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});	
+		
+	</script>
+
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Article</title>
+    <link rel="icon" href="imgs/tech.png">
+    	
+   
+</head>
+<body>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <div class="font">
+		<div class="container-fluid">
+			<div id="header"></div>
+			    <link rel="stylesheet" href="styles/style.css">
+                <div class="header-spacing"></div>
+			    
+                <div class="our-story">
+                    <h1>#Our Story</h1>
+                    <br>
+                    <p>We started out as..... Wait! there is no 'we', I started this media company and I do all the work. What work? you may ask.
+                        Well a lot of work like making and maintaining this website writing really good articles, that is, copying articles from other websites.
+                        <br><br>I was forced to make this website and I was not and will never be financially compensated for the same. I personally believe this is equivalent to slavery. But, as Gandhiji said <i>"These iggas do anything for grades"</i>
+                    </p>
+                </div>
+                <div class="our-goal">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 justify-content-center d-flex">
+                            <img src="imgs/gadgets.jpg" class="img-fluid about-pic">
+                        </div>
+                        <div class="col-xl text-center">
+                            <h1>#Our Goal</h1>
+                            <br>
+                            <p>My goal is to copy news articles from other websites. I use multiple accounts to keep up the facade of having multiple writers. This begs the question, <i>"Can a man be more than himself?".</i> As Ducard said <i>"But if you make yourself more than just a man, if you devote yourself to an ideal, and if they can't stop you, then you become something else entirely. Legend, Mr. Wayne".</i>
+                                Later, Bruce Wayne suffered from Osteoarthritis due to all those years of batmaning. Luckily, I have chopped off my legs before working on this project.<br>Fun Fact: This image here is pointless.
+                            </p>
+                        </div>
+                </div>
+                
+                </div>
+
+                <div class="developer">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 justify-content-center d-flex">
+                            <img src="imgs/dev.png" class="img-fluid dev-pic">
+                        </div>
+                        <div class="col-xl text-center">
+                            <h1>#Developer</h1>
+                            <br>
+                            <p>Back to the Batman discussion then? My favorite batman moment is when he's asked to kill a criminal but he denies to do so. Ducard says <i>"Your compassion is a weakness your enemies will not share."</i> and Bruce replies <i>"That's why it's so important. It separates us from them."</i>
+                            This marks the start of Batman's famous "no kill" policy. A minute later Bruce burns the entire building down killing everyone including the criminal he refused to kill. And obviously he saved the Ducard, the villain. <br> Jokes apart I try to follow Batman's "no-kill" policy, I just hire professionals. Now turn on dark mode and make my hair black. </p>
+                            <img src="imgs/bateman.png" class="img-fluid bateman">
+
+                        </div>
+                </div>
+                
+                </div>
+        </div>
+    </div>
+</body>
+</html>
