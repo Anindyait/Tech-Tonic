@@ -22,6 +22,8 @@ public class Utilities{
         // TODO Auto-generated constructor stub
     }
     
+    protected static String DB_pwd = "abcd";
+    
     protected static String GetUID(HttpServletRequest request)
     {
 		Cookie ck[] = request.getCookies();

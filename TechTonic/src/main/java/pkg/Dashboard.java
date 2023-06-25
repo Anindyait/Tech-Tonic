@@ -53,7 +53,7 @@ public class Dashboard extends HttpServlet {
 			System.out.println(uid*10);
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", Utilities.DB_pwd); //DriverManager is a class 
 			
 			
 			pstm = con.prepareStatement("select first_name, last_name, email, phone, dob, gender from user_table where user_id = ?;");

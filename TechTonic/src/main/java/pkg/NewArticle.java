@@ -110,7 +110,7 @@ public class NewArticle extends HttpServlet {
 			PreparedStatement pstm; 			       //class to prepare statement
 			
 			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", Utilities.DB_pwd); //DriverManager is a class 
 														//jdbc:mysql then ip address then port no. then db name
 													
 

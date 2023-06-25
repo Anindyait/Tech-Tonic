@@ -67,7 +67,7 @@ public class EditArticle extends HttpServlet {
     		PreparedStatement pstm;
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", Utilities.DB_pwd); //DriverManager is a class 
 			
 			//Query by id
 			pstm = con.prepareStatement("select article_id, title, body, post_date, tags, image_path, poster from article where article_id = ?;");
@@ -171,7 +171,7 @@ public class EditArticle extends HttpServlet {
 			PreparedStatement pstm; 			       //class to prepare statement
 			
 			Class.forName("com.mysql.cj.jdbc.Driver"); //Class is a class
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", Utilities.DB_pwd); //DriverManager is a class 
 														//jdbc:mysql then ip address then port no. then db name
 													
 

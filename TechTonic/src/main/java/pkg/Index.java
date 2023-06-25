@@ -50,7 +50,7 @@ public class Index extends HttpServlet {
     		PreparedStatement pstm;
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", "abcd"); //DriverManager is a class 
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/news", "root", Utilities.DB_pwd); //DriverManager is a class 
 			
 			//Access top news
 			pstm = con.prepareStatement("select article_id, title, image_path, poster from article order by post_date desc limit 1;");
