@@ -12,6 +12,15 @@
 
 ## Preview
 
+![dark mode](https://github.com/Anindyait/Tech-Tonic/assets/91337664/31fd984a-1e4c-4b10-88c6-1f969c7c5cc8)
+
+![light mode](https://github.com/Anindyait/Tech-Tonic/assets/91337664/07bfbe4e-241b-45d9-83f5-bae2d9404452)
+
+![dashboard](https://github.com/Anindyait/Tech-Tonic/assets/91337664/e94b5491-a0cf-496a-837f-86646d6d0348)
+
+![login](https://github.com/Anindyait/Tech-Tonic/assets/91337664/0ae35997-8e02-4a77-ad9b-ca0c6091ed11)
+
+![about](https://github.com/Anindyait/Tech-Tonic/assets/91337664/5078e3e3-a274-4120-a095-562425a97213)
 
 https://github.com/Anindyait/Tech-Tonic/assets/91337664/dd59182c-69ae-4d0f-b40b-248726a17469
 
