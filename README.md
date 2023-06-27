@@ -11,7 +11,11 @@
 
 
 ## Preview
-<video src="preview/preview_video.mp4" controls title="Title" width="100%"></video>
+
+
+https://github.com/Anindyait/Tech-Tonic/assets/91337664/dd59182c-69ae-4d0f-b40b-248726a17469
+
+
 
 ## Features
 
